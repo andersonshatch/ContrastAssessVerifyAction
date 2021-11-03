@@ -32,7 +32,7 @@ inputs:
   fail_threshold:
     description: 'Number of vulnerabilities that are needed to fail the build (not used if there is a defined job outcome policy)'
     default: '0'
-  
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
