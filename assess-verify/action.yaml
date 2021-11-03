@@ -8,8 +8,7 @@ branding:
 
 inputs:
   build_number:
-    description: 'Build number / application version to check vulnerabilities against'
-    default: '$GITHUB_SHA'
+    description: 'Build number / application version to check vulnerabilities against. Defaults to $GITHUB_SHA.'
   contrast_api_key:
     description: 'Contrast User/Service Account API Key'
     required: true

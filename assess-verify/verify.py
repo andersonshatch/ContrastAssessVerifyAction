@@ -163,9 +163,8 @@ else:
     )
     open_vulnerabilities = open_vulnerabilities_data["count"]
     if open_vulnerabilities > CONFIG["FAIL_THRESHOLD"]:
-        gh_action.warning(f"The vulnerability count is {open_vulnerabilities}")
         gh_action.set_failed(
-            f'Contrast verify gate fails as this is above threshold (threshold allows {CONFIG["FAIL_THRESHOLD"]})'
+            f'The vulnerability count is {open_vulnerabilities} - Contrast verify gate fails as this is above threshold (threshold allows {CONFIG["FAIL_THRESHOLD"]})'
         )
     else:
         gh_action.info(
