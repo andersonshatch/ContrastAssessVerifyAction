@@ -128,7 +128,7 @@ def fetch_vulnerability_count():
         f'traces/{CONFIG["APP_ID"]}/quick',
         {
             "severities": CONFIG["SEVERITIES"],
-            "app_version_tags": [CONFIG["BUILD_NUMBER"]],
+            "appVersionTags": [CONFIG["BUILD_NUMBER"]],
         },
     )
     return response.json()
