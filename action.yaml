@@ -23,8 +23,9 @@ inputs:
     description: 'Contrast Organization ID'
     required: true
   app_name:
-    description: 'Name of the application to verify against'
-    required: true
+    description: 'Name of the application to verify against. Required if app_id not passed.'
+  app_id:
+    description: 'ID of the application to verify against. Required if app_name not passed.'
   severities:
     description: 'Comma separated list of vulnerability severities to consider (not used if there is a defined job outcome policy)'
     default: 'CRITICAL,HIGH'
