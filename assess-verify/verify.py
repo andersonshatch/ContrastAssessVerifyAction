@@ -146,6 +146,11 @@ if security_check_result == False:
     jop_policy = job_outcome_policy_result["security_check"]["job_outcome_policy"]
     jop_outcome = jop_policy["outcome"]
     jop_name = jop_policy["name"]
+    if jop_policy["opt_into_query"] == False:
+        gh_action.info(
+            f'Matching policy "{jop_name}" is not configured to apply the "query vulnerabilities by selection from the plugin when filtering vulnerabilities" option, this means all open vulnerabilities will be considered, not just those from the build_number input.'
+        )
+
     gh_action.set_failed(
         f'Contrast verify gate fails with status {jop_outcome} - policy "{jop_name}"'
     )
