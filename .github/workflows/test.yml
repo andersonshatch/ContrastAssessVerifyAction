@@ -27,6 +27,8 @@
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ env.DEFAULT_PYTHON }}
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
       - name: Restore pre-commit environment from cache
         id: cache-precommit
         uses: actions/cache@v2.1.6
@@ -38,9 +40,6 @@
         if: steps.cache-precommit.outputs.cache-hit != 'true'
         run: pre-commit install-hooks
       - name: Run pre-commit
-        run: |
-          pip install -r requirements-dev.txt
-          pre-commit install-hooks
-          pre-commit run --hook-stage manual --all-files --show-diff-on-failure
+        run: pre-commit run --hook-stage manual --all-files --show-diff-on-failure
       - name: Run unit-tests
         run:  python test.py
