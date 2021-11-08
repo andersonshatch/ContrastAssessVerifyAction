@@ -17,10 +17,11 @@ Defaults to `$GITHUB_SHA`
 
 **Required** Contrast User/Service Account Authorization Header.
 
-## `contrast_host`
+## `contrast_url`
 
-Hostname of your Contrast Teamserver Instance (do not include http/https://)'.
-Defaults to `app.contrastsecurity.com`
+URL of your Contrast Teamserver Instance (should begin with `https://` or `http://`)'.
+Defaults to `https://app.contrastsecurity.com`
+(`/Contrast/api/ng/` is used automatically)
 
 ## `contrast_org_id`
 
