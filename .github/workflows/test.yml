@@ -29,7 +29,7 @@
           python-version: ${{ env.DEFAULT_PYTHON }}
       - name: Restore pre-commit environment from cache
         id: cache-precommit
-      - uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.6
         with:
           path: ${{ env.PRE_COMMIT_CACHE }}
           key: >-
